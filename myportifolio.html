@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAT.LINE // HACKER PORTFOLIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* FIRE RAT-LINE HACKER STYLES - ALL EFFECTS INCLUDED */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000 !important;
+            color: #ff0000 !important;
+            font-family: 'JetBrains Mono', monospace !important;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="%23ff0000" stroke-width="2"/></svg>'), auto !important;
+        }
+        
+        /* === INTENSE RED GLITCH EFFECT === */
+        .text-glitch {
+            position: relative !important;
+            color: #ff0000 !important;
+            text-shadow: 
+                0.05em 0 0 #ff0000,
+                -0.025em -0.05em 0 #8b0000,
+                0.025em 0.05em 0 #ff4500 !important;
+            animation: glitch 500ms infinite !important;
+        }
+        
+        .text-glitch::before,
+        .text-glitch::after {
+            content: attr(data-text) !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        
+        .text-glitch::before {
+            animation: glitch-top 1s infinite !important;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%) !important;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%) !important;
+        }
+        
+        .text-glitch::after {
+            animation: glitch-bottom 1.5s infinite !important;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%) !important;
+            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%) !important;
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #ff0000, -0.025em -0.05em 0 #8b0000 !important; }
+            15% { text-shadow: -0.05em -0.025em 0 #ff0000, 0.025em 0.025em 0 #8b0000 !important; }
+            50% { text-shadow: 0.025em -0.05em 0 #ff0000, -0.05em 0 0 #8b0000 !important; }
+            100% { text-shadow: -0.025em 0 0 #ff0000, -0.025em -0.025em 0 #8b0000 !important; }
+        }
+        
+        @keyframes glitch-top {
+            0%, 100% { transform: translate(0) !important; }
+            50% { transform: translate(-0.025em, 0.025em) !important; }
+        }
+        
+        @keyframes glitch-bottom {
+            0%, 100% { transform: translate(0) !important; }
+            50% { transform: translate(0.025em, -0.025em) !important; }
+        }
+        
+        /* === TERMINAL TYPING EFFECT === */
+        .terminal {
+            border-right: 3px solid #ff0000 !important;
+            animation: blink 0.75s step-end infinite !important;
+        }
+        
+        @keyframes blink {
+            50% { border-color: transparent !important; }
+        }
+        
+        /* === SCAN LINE EFFECT === */
+        .scanlines {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(255, 0, 0, 0.03) 50%
+            ) !important;
+            background-size: 100% 4px !important;
+            pointer-events: none !important;
+            z-index: 9999 !important;
+            animation: scanline 10s linear infinite !important;
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(0) !important; }
+            100% { transform: translateY(100vh) !important; }
+        }
+        
+        /* === RAT-LINE STYLING === */
+        .rat-line {
+
+            position: absolute !important;
+            background: linear-gradient(90deg, transparent, #ff0000, transparent) !important;
+            height: 1px !important;
+            filter: blur(1px) !important;
+            animation: ratMove 3s linear infinite !important;
+        }
+        
+        @keyframes ratMove {
+            0% { transform: translateX(-100%) !important; }
+            100% { transform: translateX(100vw) !important; }
+        }
+        
+        /* === DATA STREAM EFFECT === */
+        .data-stream {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            pointer-events: none !important;
+            z-index: 1 !important;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 0, 0, 0.03) 0px,
+                    rgba(255, 0, 0, 0.03) 1px,
+                    transparent 1px,
+                    transparent 2px
+                ) !important;
+        }
+        
+        /* === INTENSE RED GLOW === */
+        .red-glow {
+            box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #8b0000 !important;
+        }
+        
+        .text-red-glow {
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000 !important;
+        }
+        
+        /* === BINARY RAIN === */
+        .binary-rain {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            pointer-events: none !important;
+            z-index: 0 !important;
+            opacity: 0.3 !important;
+        }
+        
+        .binary-char {
+            position: absolute !important;
+            color: #ff0000 !important;
+            font-size: 14px !important;
+            animation: fall linear infinite !important;
+        }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh) !important; }
+        }
+        
+        /* === HACKER TERMINAL SCROLL === */
+        .terminal-scroll {
+            background: rgba(0, 0, 0, 0.95) !important;
+            border: 1px solid #ff0000 !important;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3) !important;
+        }
+        
+        /* === PULSING RED ALERT === */
+        .pulse-red {
+            animation: pulseRed 2s infinite !important;
+        }
+        
+        @keyframes pulseRed {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7) !important; }
+            70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0) !important; }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0) !important; }
+        }
+        
+        /* === DISTORTION EFFECT === */
+        .distort {
+            animation: distort 0.1s infinite !important;
+        }
+        
+        @keyframes distort {
+            0% { transform: translate(0) !important; }
+            20% { transform: translate(-2px, 2px) !important; }
+            40% { transform: translate(-2px, -2px) !important; }
+            60% { transform: translate(2px, 2px) !important; }
+            80% { transform: translate(2px, -2px) !important; }
+            100% { transform: translate(0) !important; }
+        }
+        
+        /* === CRT MONITOR EFFECT === */
+        .crt::after {
+            content: " " !important;
+            display: block !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            bottom: 0 !important;
+            right: 0 !important;
+            background: rgba(18, 16, 16, 0.1) !important;
+            opacity: 0.3 !important;
+            z-index: 999 !important;
+            pointer-events: none !important;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15) 0px,
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            ) !important;
+        }
+
+        /* === CUSTOM FONTS === */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        .font-orbitron { font-family: 'Orbitron', sans-serif !important; }
+        .font-tech { font-family: 'Share Tech Mono', monospace !important; }
+        .font-jetbrains { font-family: 'JetBrains Mono', monospace !important; }
+        
+        /* === RESPONSIVE FIXES === */
+        @media (max-width: 768px) {
+            .text-4xl { font-size: 2rem !important; }
+            .text-5xl { font-size: 2.5rem !important; }
+            .text-8xl { font-size: 3rem !important; }
+        }
+    </style>
+</head>
+<body class="bg-black text-red-600 crt">
+    <!-- BINARY RAIN BACKGROUND -->
+    <div id="binaryRain" class="binary-rain"></div>
+    
+    <!-- SCAN LINES -->
+    <div class="scanlines"></div>
+    
+    <!-- DATA STREAM -->
+    <div class="data-stream"></div>
+    
+    <!-- RAT LINES -->
+    <div id="ratLines"></div>
+    
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-sm border-b border-red-800/50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+                    <div class="text-glitch font-orbitron font-bold text-xl">
+                        YONAS.ABEBE
+                    </div>
+                    <div class="text-red-400 text-sm font-tech terminal">
+                        [@-portfolio:~] 
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-red-400 hover:text-red-600 hover:underline transition-all duration-300 font-tech">!HOME</a>
+                    <a href="#work" class="text-red-400 hover:text-red-600 hover:underline transition-all duration-300 font-tech">!PROJECTS</a>
+                    <a href="#skills" class="text-red-400 hover:text-red-600 hover:underline transition-all duration-300 font-tech">!SKILLS</a>
+                    <a href="#contact" class="text-red-400 hover:text-red-600 hover:underline transition-all duration-300 font-tech">!CONTACT</a>
+                </div>
+                
+                <div class="text-red-400 text-sm font-tech">
+                    <span class="terminal">[CONNECTED]</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden p-4">
+        <!-- ANIMATED RED GRID -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: 
+                linear-gradient(rgba(255,0,0,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,0,0,0.1) 1px, transparent 1px);
+                background-size: 50px 50px;">
+            </div>
+        </div>
+        
+        <!-- MAIN CONTENT -->
+        <div class="relative z-20 text-center max-w-6xl mx-auto">
+            <!-- STATUS INDICATOR -->
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <div class="w-4 h-4 bg-red-600 rounded-full pulse-red"></div>
+                <div class="text-red-400 font-tech terminal animate-pulse">
+                    SYSTEM_ACTIVE
+                </div>
+                <div class="w-4 h-4 bg-red-600 rounded-full pulse-red" style="animation-delay: 1s"></div>
+            </div>
+            
+            <!-- MAIN HEADLINE -->
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 font-orbitron">
+                <span class="text-glitch" data-text="CREATIVE_DEVELOPER">CREATIVE_DEVELOPER</span>
+            </h1>
+            
+            <div class="text-3xl md:text-5xl font-bold mb-8 font-orbitron">
+                <span class="text-red-400"></span>
+
+                <span class="text-glitch ml-4" data-text="AI-ENGENER">AI-Engineer</span>
+            </div>
+            
+            <!-- TERMINAL PROMPT -->
+            <div class="bg-black/80 border border-red-800 rounded-lg p-6 mb-10 terminal-scroll max-w-2xl mx-auto text-left">
+                <div class="font-tech text-sm">
+                    <p class="text-green-500">Yonas-Abebe</p>
+                    <!-- IMAGE CARD 2 -->
+    <div class="terminal-image-card ml-10">
+      <img src="/images/mission.jpg" alt="Mission">
+      <div class="overlay">Developer</div>
+
+    </div><!-- CSS -->
+<style>
+.terminal-image-card {
+  position: relative;
+  max-width: 400px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(220, 38, 38, 0.6);
+  background: #000;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(220, 38, 38, 0.15);
+}
+
+.terminal-image-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 25px 60px rgba(220, 38, 38, 0.35),
+    inset 0 0 0 1px rgba(220, 38, 38, 0.35);
+}
+
+.terminal-image-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.terminal-image-card:hover img {
+  transform: scale(1.06);
+}
+
+.terminal-image-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.15)
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  font-family: monospace;
+  letter-spacing: 0.15em;
+  color: #dc2626;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.terminal-image-card:hover .overlay {
+  opacity: 1;
+}
+</style>
+                    <p class="text-green-300 mb-4">React expo dev // Machine-Learning
+                    
+                    <p class="text-green-500">mission</p>
+                    <p class="text-red-300 mb-4">ETL // BIG DATA // AI MODEL</p>
+                    
+                    <p class="text-green-500"> coder --
+passion</p>
+                    <p class="text-red-300 terminal"> [CODE] [DEBUGE]</p>
+                </div>
+            </div>
+            
+            <!-- ACTION BUTTONS -->
+            <div class="space-x-4">
+                <button onclick="initiateBreach()" class="bg-black border-2 border-red-600 text-red-600 px-8 py-3 font-bold font-orbitron 
+                           hover:bg-red-600 hover:text-black transition-all duration-300 red-glow 
+                           hover:scale-105 active:scale-95">
+                    INITIATE
+                </button>
+                
+                <button onclick="viewExploits()" class="bg-red-600/20 border border-red-600 text-red-400 px-8 py-3 font-bold font-orbitron
+                           hover:bg-red-600 hover:text-black transition-all duration-300
+                           hover:scale-105 active:scale-95">
+                    VIEW_timeline
+                </button>
+            </div>
+            
+            <!-- SCROLL INDICATOR -->
+            <div class="mt-20 animate-bounce">
+                <div class="text-red-400 font-tech terminal">SCROLL_DOWN</div>
+                <div class="mx-auto w-px h-10 bg-gradient-to-b from-red-600 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center mb-12">
+                <div class="h-px flex-grow bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+                <h2 class="text-4xl md:text-5xl font-bold mx-8 font-orbitron text-glitch" data-text="SKILLSET">
+                    SKILLSET
+                </h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+            </div>
+            
+            <!-- SKILLS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- PENETRATION TESTING -->
+                <div class="bg-black/50 border border-red-800 rounded-lg p-6 hover:border-red-600 
+                          transition-all duration-300 hover:scale-105 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-red-600 rounded-full mr-3 group-hover:animate-pulse"></div>
+                        <h3 class="text-xl font-bold font-orbitron">Mobile_developer</h3>
+                    </div>
+                    <ul class="space-y-2 text-red-300 font-tech text-sm">
+                        <li>> React Native</li>
+                        <li>> Firebase</li>
+                        <li>> clark-auth</li>
+                        <li>>cloudinary</li>
+                        <li>> expo</li>
+                    </ul>
+                    <div class="mt-4 text-red-400 text-xs terminal">[ACTIVE: 5]</div>
+                </div>
+                
+                <!-- MALWARE DEVELOPMENT -->
+                <div class="bg-black/50 border border-red-800 rounded-lg p-6 hover:border-red-600 
+                          transition-all duration-300 hover:scale-105 group">
+                    <div class="flex items-center mb-4">
+
+                        <div class="w-3 h-3 bg-red-600 rounded-full mr-3 group-hover:animate-pulse"></div>
+                        <h3 class="text-xl font-bold font-orbitron">Machine-Learning</h3>
+                    </div>
+                    <ul class="space-y-2 text-red-300 font-tech text-sm">
+                        <li>> pytorch</li>
+                        <li>> tensorflow</li>
+                        <li>> Pandas</li>
+                        <li>> Scikit-learn</li>
+                        <li>> langchain</li>
+                    </ul>
+                    <div class="mt-4 text-red-400 text-xs terminal">[ACTIVE: 5]</div>
+                </div>
+                
+                <!-- NETWORK OPS -->
+                <div class="bg-black/50 border border-red-800 rounded-lg p-6 hover:border-red-600 
+                          transition-all duration-300 hover:scale-105 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-red-600 rounded-full mr-3 group-hover:animate-pulse"></div>
+                        <h3 class="text-xl font-bold font-orbitron">Backend Development</h3>
+                    </div>
+                    <ul class="space-y-2 text-red-300 font-tech text-sm">
+                        <li>> django</li>
+                        <li>> django-RestFreamwork</li>
+                        <li>> api</li>
+                        <li>> Firestone</li>
+                        <li>> SQL</li>
+                    </ul>
+                    <div class="mt-4 text-red-400 text-xs terminal">[ACTIVE_BACKEND: 5]</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PORTFOLIO SECTION -->
+    <section id="work" class="py-20 bg-black/70">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center mb-12">
+                <div class="h-px flex-grow bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+                <h2 class="text-4xl md:text-5xl font-bold mx-8 font-orbitron text-glitch" data-text="HISTORY_MY">
+                    HISTORY_MY
+                </h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+            </div>
+            
+            <!-- PROJECTS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden border border-red-800 rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-900/20 to-black z-0"></div>
+                    <div class="relative z-10 p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-2 h-2 bg-red-600 rounded-full mr-2 animate-pulse"></div>
+                            <span class="text-red-400 text-sm font-tech">[NLP]</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-orbitron">amharicNLP</h3>
+                        <p class="text-red-300 text-sm mb-4">Amharic NLP Toolkit   is a lightweight python package, and easy-to-use Natural Language Processing (NLP) toolkit designed specifically for the Amharic language. </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">pip</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">install</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">amharicNLP</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-400 to-red-600
+
+                              transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden border border-red-800 rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-900/20 to-black z-0"></div>
+                    <div class="relative z-10 p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-2 h-2 bg-red-600 rounded-full mr-2 animate-pulse"></div>
+                            <span class="text-red-400 text-sm font-tech">[COMPUTER_VISITION]</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-orbitron">OBJECT-DETECTION</h3>
+                        <p class="text-red-300 text-sm mb-4">Real-time Road object detection and tracking system using YOLOv11 </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">CV</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">python</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">pytorch</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-400 to-red-600 
+                              transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden border border-red-800 rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-900/20 to-black z-0"></div>
+                    <div class="relative z-10 p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-2 h-2 bg-red-600 rounded-full mr-2 animate-pulse"></div>
+                            <span class="text-red-400 text-sm font-tech">[MOBILE-APP]</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-orbitron">MOBILE_APP_DEVELOPMENT</h3>
+                        <p class="text-red-300 text-sm mb-4">Custom mobile applications with advanced security and privacy features.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">React Native</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">Firebase</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">expo</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-400 to-red-600 
+                              transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="group relative overflow-hidden border border-red-800 rounded-lg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-900/20 to-black z-0"></div>
+                    <div class="relative z-10 p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-2 h-2 bg-red-600 rounded-full mr-2 animate-pulse"></div>
+                            <span class="text-red-400 text-sm font-tech">[AI-POWERED]</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-orbitron">WEB-APP</h3>
+                        <p class="text-red-300 text-sm mb-4">Sentiment analysis  platform  deep learning besed.</p>
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">django</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">React</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 text-xs rounded">TensorFlow</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-400 to-red-600 
+                              transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div class="flex items-center mb-12">
+                    <div class="h-px flex-grow bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+                    <h2 class="text-4xl md:text-5xl font-bold mx-8 font-orbitron text-glitch" data-text="CONNECT_">
+                        CONNECT_
+                    </h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+                </div>
+                
+                <!-- ENCRYPTED CONTACT FORM -->
+                <div class="terminal-scroll p-8">
+                    <div class="font-tech text-sm mb-6">
+                        <p class="text-green-500">Establish_AI_AGENT
+
+                        </p>
+                        <p class="text-red-300 terminal">[EXPO] [ML] [AI]</p>
+                    </div>
+                    
+                  
+                       
+                        
+                        <button onclick="sendEncryptedMessage()" class="w-full bg-black border-2 border-red-600 text-red-600 py-4 
+                                 font-bold font-orbitron hover:bg-red-600 hover:text-black 
+                                 transition-all duration-300 red-glow hover:scale-105 active:scale-95
+                                 flex items-center justify-center space-x-3">
+
+                            <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+                            <span>LEARN_TIME_LINE</span>
+                            <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse" style="animation-delay: 0.5s"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t border-red-800/50">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-red-400 font-tech mb-2">progress</div>
+                                <div class="text-red-600 font-orbitron terminal">Keept</div>
+                            </div>
+                            <div>
+                                <div class="text-red-400 font-tech mb-2">LEARN</div>
+                                <div class="text-red-600 font-orbitron terminal">ACTIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="border-t border-red-800/30 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-glitch font-orbitron font-bold text-xl mb-2">
+                        ONE.LINE_CODER
+                    </div>
+                    <div class="text-red-400 text-sm font-tech">
+                         [ ACTIVE] [LOCATION: ADDIS ABABA]
+                    </div>
+                </div>
+                
+                <div class="text-red-300 text-sm font-tech">
+                    <div class="flex space-x-6">
+                        <a href="https://github.com/yonasab12" class="hover:text-red-600 hover:underline transition">[GITHUB]</a>
+                        <a href="https://www.linkedin.com/in/yonas-abebe-823b27298/" class="hover:text-red-600 hover:underline transition">[LINKEDIN]</a>
+                        <a href="https://www.kaggle.com/yonasabebe/datasets" class="hover:text-red-600 hover:underline transition">[KAGGLE]</a>
+                        <a href="https://pypi.org/project/amharicNLP/" class="hover:text-red-600 hover:underline transition">[AMHARIC_NLP]</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-red-500 text-xs font-tech">
+                <div class="terminal">[2026]</div>
+                <div class="mt-2">ALL ACTIVITIES  ENCRYPTED</div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // === INITIALIZE ANIMATIONS ===
+        document.addEventListener('DOMContentLoaded', function() {
+            createBinaryRain();
+            createRatLines();
+            setupTerminalEffects();
+            setupSmoothScrolling();
+            startStatusUpdates();
+            
+            // Type "CYBER_WARFARE" text on load
+            typeCyberWarfare();
+            
+            // Add random terminal noise every 2 seconds
+            setInterval(addTerminalNoise, 2000);
+        });
+        
+        // === BINARY RAIN EFFECT ===
+        function createBinaryRain() {
+            const binaryRain = document.getElementById('binaryRain');
+            const chars = '01';
+            
+            for(let i = 0; i < 100; i++) {
+                const char = document.createElement('div');
+                char.className = 'binary-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + 'vw';
+                char.style.animationDelay = Math.random() * 5 + 's';
+                char.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                binaryRain.appendChild(char);
+            }
+        }
+        
+        // === RAT LINES EFFECT ===
+        function createRatLines() {
+            const ratLines = document.getElementById('ratLines');
+            
+            for(let i = 0; i < 5; i++) {
+                const line = document.createElement('div');
+                line.className = 'rat-line';
+                line.style.top = Math.random() * 100 + 'vh';
+                line.style.width = Math.random() * 100 + 50 + 'px';
+                line.style.animationDelay = Math.random() * 5 + 's';
+                line.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                ratLines.appendChild(line);
+            }
+        }
+        
+        // === TERMINAL EFFECTS ===
+        function setupTerminalEffects() {
+            // Terminal cursor blink
+            setInterval(() => {
+                document.querySelectorAll('.terminal').forEach(term => {
+                    const hasCursor = term.style.borderRightColor === 'transparent';
+                    term.style.borderRightColor = hasCursor ? '#ff0000' : 'transparent';
+                });
+            }, 750);
+        }
+        
+        // === SMOOTH SCROLLING ===
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // === STATUS UPDATES ===
+        function startStatusUpdates() {
+            setInterval(() => {
+                const statuses = ['[ACTIVE]', '[LOADING]', '[CODE]', '[DEBUGE]', '[MODEL]', '[PROCESSING]'];
+                const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+                document.querySelectorAll('.terminal').forEach(term => {
+                    if(term.textContent.includes('ACTIVE')) {
+                        term.textContent = term.textContent.replace(/\[.*?\]/g, randomStatus);
+                    }
+                });
+            }, 3000);
+        }
+        
+        // === TYPEWRITER EFFECT ===
+        function typeCyberWarfare() {
+            const textElement = document.querySelector('.text-glitch[data-text="AI-ENGENER"]');
+            const text = 'AI-ENGENER';
+            let i = 0;
+            
+            const typeWriter = () => {
+                if (i < text.length) {
+
+                    textElement.textContent = text.substring(0, i + 1);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    // Start glitch animation after typing completes
+                    setTimeout(() => {
+                        textElement.classList.add('animate-glitch');
+                    }, 500);
+                }
+            };
+            
+            setTimeout(typeWriter, 1000);
+        }
+        
+        // === TERMINAL NOISE ===
+        function addTerminalNoise() {
+            const terminals = document.querySelectorAll('.terminal-scroll');
+            if(Math.random() > 0.7 && terminals.length > 0) {
+                const randomTerm = terminals[Math.floor(Math.random() * terminals.length)];
+                const noise = document.createElement('div');
+                noise.className = 'text-red-400 font-tech text-xs mt-2';
+                noise.textContent = `[${Date.now()}] LOADING: ${Math.random().toString(36).substr(2, 8)}`;
+                randomTerm.appendChild(noise);
+                
+                if(randomTerm.children.length > 10) {
+                    randomTerm.removeChild(randomTerm.children[0]);
+                }
+            }
+        }
+        
+        // === BUTTON ACTIONS ===
+        function initiateBreach() {
+            const terminal = document.querySelector('.terminal-scroll');
+            const breachMsg = document.createElement('p');
+            breachMsg.className = 'text-green-500 font-tech text-sm mt-4';
+            breachMsg.textContent = 'SEARCHING GITHUB REPO...';
+            terminal.appendChild(breachMsg);
+            
+            setTimeout(() => {
+                const successMsg = document.createElement('p');
+                successMsg.className = 'text-red-300 font-tech text-sm';
+                successMsg.textContent = 'TIMELINE [BEGIN] ';
+                terminal.appendChild(successMsg);
+                
+                // Add red alert effect
+                document.body.classList.add('distort');
+                setTimeout(() => document.body.classList.remove('distort'), 300);
+            }, 1000);
+            
+            // Scroll to show message
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        function viewExploits() {
+            const exploits = [
+                "> SOLO-2023-0001: HTML _CSS",
+                "> SOLO-2024-0002: JAVASCRIPT_REACT",
+                "> SOLO-2024-0003: IMAGE_PROCESSING COMPUTER_VISION",
+                "> SOLO-2024-0004: PYTHON_DJANGO",
+                "> SOLO-2025-0005: PYTHON_MACHINE_LEARNING",
+                "> SOLO-2025-0006: PYTHON_LANGRAPH_AI_AGENT",
+                "> SOLO-2025-0007: EXPO_MOBILE_APP",
+                "> SOLO-2026-0008: DATA_SCIENCE_ETL_PIPELINE BIDATA",
+            ];
+            
+            const terminal = document.querySelector('.terminal-scroll');
+            const exploitMsg = document.createElement('p');
+            exploitMsg.className = 'text-green-500 font-tech text-sm mt-4';
+            exploitMsg.textContent = 'SEARCHING REPO...';
+            terminal.appendChild(exploitMsg);
+            
+            setTimeout(() => {
+                exploits.forEach((exploit, index) => {
+                    setTimeout(() => {
+                        const exploitItem = document.createElement('p');
+                        exploitItem.className = 'text-cyan-300 font-tech text-sm';
+                        exploitItem.textContent = exploit;
+                        terminal.appendChild(exploitItem);
+                    }, index * 200);
+                });
+            }, 500);
+            
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        function sendEncryptedMessage() {
+            const identifier = document.getElementById('identifier').value;
+            const key = document.getElementById('key').value;
+            const message = document.getElementById('message').value;
+            
+            if(!identifier || !key || !message) {
+                alert('CONNECT');
+                return;
+            }
+
+            const terminal = document.querySelector('.terminal-scroll');
+            const sendingMsg = document.createElement('p');
+            sendingMsg.className = 'text-green-500 font-tech text-sm mt-4';
+            sendingMsg.textContent = 'BUILD AI AGENT...';
+            terminal.appendChild(sendingMsg);
+            
+            setTimeout(() => {
+                const encryptMsg = document.createElement('p');
+                encryptMsg.className = 'text-cyan-300 font-tech text-sm';
+                encryptMsg.textContent = '[CODE] [MODEL]';
+                terminal.appendChild(encryptMsg);
+                
+                setTimeout(() => {
+                    const successMsg = document.createElement('p');
+                    successMsg.className = 'text-red-300 font-tech text-sm';
+                    successMsg.textContent = 'PROCESS_COMPLETE ';
+                    terminal.appendChild(successMsg);
+                    
+                    // Clear form
+                    document.getElementById('identifier').value = '';
+                    document.getElementById('key').value = '';
+                    document.getElementById('message').value = '';
+                    
+                    // Add visual feedback
+                    document.querySelector('button').classList.add('bg-red-600', 'text-black');
+                    setTimeout(() => {
+                        document.querySelector('button').classList.remove('bg-red-600', 'text-black');
+                    }, 1000);
+                    
+                }, 1000);
+            }, 500);
+            
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        // === RANDOM GLITCH EFFECT ON SCROLL ===
+        window.addEventListener('scroll', () => {
+            const glitchElements = document.querySelectorAll('.text-glitch');
+            
+            glitchElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+                
+                if(isVisible && Math.random() > 0.7) {
+                    el.classList.add('distort');
+                    setTimeout(() => el.classList.remove('distort'), 100);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
