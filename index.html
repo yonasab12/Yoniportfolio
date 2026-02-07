@@ -1172,6 +1172,65 @@ passion</p>
                 });
             });
         }
+
+
+// === SHOW NOTIFICATION FUNCTION ===
+function showNotification(message, type = 'success') {
+    // Remove any existing notifications
+    const existingNotification = document.querySelector('.form-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `form-notification fixed top-6 right-6 z-[9999] 
+                           ${type === 'success' ? 'bg-green-600/20 border-green-600' : 'bg-red-600/20 border-red-600'} 
+                           border px-6 py-4 rounded-lg font-orbitron text-white 
+                           transform translate-x-0 transition-all duration-500`;
+    
+    // Add icon and message
+    notification.innerHTML = `
+        <div class="flex items-center space-x-3">
+            <div class="w-3 h-3 rounded-full ${type === 'success' ? 'bg-green-500' : 'bg-red-500'} animate-pulse"></div>
+            <span class="font-tech">${message}</span>
+        </div>
+    `;
+    
+    // Add to body
+    document.body.appendChild(notification);
+    
+    // Show with animation
+    setTimeout(() => {
+        notification.classList.add('translate-x-0');
+    }, 10);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.classList.add('translate-x-full');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 500);
+    }, 5000);
+}
+
+// Then in your form submission function, add this:
+function sendEncryptedMessage() {
+    // ... existing code ...
+    
+    // Show sending notification
+    showNotification('SENDING_MESSAGE...', 'info');
+    
+    // After successful send:
+    showNotification('MESSAGE_SENT_SUCCESSFULLY!', 'success');
+    
+    // Or if error:
+    showNotification('ERROR_SENDING_MESSAGE', 'error');
+}
+
+
         
         // === STATUS UPDATES ===
         function startStatusUpdates() {
