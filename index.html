@@ -224,6 +224,70 @@
             ) !important;
         }
 
+        /* === SKILL PERCENTAGE CIRCLE === */
+        .skill-percent-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #2563eb;
+            font-weight: bold;
+            font-size: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-percent-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+            background: rgba(37, 99, 235, 0.2);
+        }
+        
+        /* === CERTIFICATION CARDS === */
+        .cert-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cert-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+        }
+        
+        .cert-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #2563eb;
+            color: black;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .cert-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+        
         /* === CUSTOM FONTS === */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;700&display=swap');
         
@@ -236,6 +300,11 @@
             .text-4xl { font-size: 2rem !important; }
             .text-5xl { font-size: 2.5rem !important; }
             .text-8xl { font-size: 3rem !important; }
+            .skill-percent-circle {
+                width: 40px;
+                height: 40px;
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -270,7 +339,7 @@
                     <a href="#home" class="text-blue-400 hover:text-blue-600 hover:underline transition-all duration-300 font-tech">!HOME</a>
                     <a href="#work" class="text-blue-400 hover:text-blue-600 hover:underline transition-all duration-300 font-tech">!PROJECTS</a>
                     <a href="#skills" class="text-blue-400 hover:text-blue-600 hover:underline transition-all duration-300 font-tech">!SKILLS</a>
-                    <a href="#contact" class="text-blue-400 hover:text-blue-600 hover:underline transition-all duration-300 font-tech">!CONTACT</a>
+                    <a href="#contact" class="text-blue-400 hover:text-blue-600 hover:underline transition-all duration-300 font-tech">!About</a>
                 </div>
                 
                 <div class="text-blue-400 text-sm font-tech">
@@ -309,7 +378,7 @@
             
             <div class="text-3xl md:text-5xl font-bold mb-8 font-orbitron">
                 <span class="text-blue-400"></span>
-                <span class="text-glitch ml-4" data-text="AI-ENGINEER">AI-Engineer</span>
+                <span class="text-glitch ml-4" data-text="AI-ENGINEER">AI-ENGINEER</span>
             </div>
             
             <!-- TERMINAL PROMPT -->
@@ -422,7 +491,7 @@ passion</p>
             
             <!-- SKILLS GRID -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- PENETRATION TESTING -->
+                <!-- MOBILE DEVELOPMENT -->
                 <div class="bg-black/50 border border-blue-800 rounded-lg p-6 hover:border-blue-600 
                           transition-all duration-300 hover:scale-105 group">
                     <div class="flex items-center mb-4">
@@ -430,16 +499,35 @@ passion</p>
                         <h3 class="text-xl font-bold font-orbitron">Mobile_developer</h3>
                     </div>
                     <ul class="space-y-2 text-blue-300 font-tech text-sm">
-                        <li>> React Native</li>
-                        <li>> Firebase</li>
-                        <li>> clark-auth</li>
-                        <li>> cloudinary</li>
-                        <li>> expo</li>
+                        <li class="flex justify-between items-center">
+                            <span>> React Native</span>
+                            <div class="skill-percent-circle" title="95% Mastery">95%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Firebase</span>
+                            <div class="skill-percent-circle" title="90% Mastery">90%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Clark-Auth</span>
+                            <div class="skill-percent-circle" title="85% Mastery">85%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Cloudinary</span>
+                            <div class="skill-percent-circle" title="88% Mastery">88%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Expo</span>
+                            <div class="skill-percent-circle" title="92% Mastery">92%</div>
+                        </li>
                     </ul>
                     <div class="mt-4 text-blue-400 text-xs terminal">[ACTIVE: 5]</div>
                 </div>
                 
-                <!-- MALWARE DEVELOPMENT -->
+                <!-- MACHINE LEARNING -->
                 <div class="bg-black/50 border border-blue-800 rounded-lg p-6 hover:border-blue-600 
                           transition-all duration-300 hover:scale-105 group">
                     <div class="flex items-center mb-4">
@@ -447,16 +535,35 @@ passion</p>
                         <h3 class="text-xl font-bold font-orbitron">Machine-Learning</h3>
                     </div>
                     <ul class="space-y-2 text-blue-300 font-tech text-sm">
-                        <li>> pytorch</li>
-                        <li>> tensorflow</li>
-                        <li>> Pandas</li>
-                        <li>> Scikit-learn</li>
-                        <li>> langchain</li>
+                        <li class="flex justify-between items-center">
+                            <span>> PyTorch</span>
+                            <div class="skill-percent-circle" title="88% Mastery">88%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> TensorFlow</span>
+                            <div class="skill-percent-circle" title="85% Mastery">85%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Pandas</span>
+                            <div class="skill-percent-circle" title="92% Mastery">92%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Scikit-learn</span>
+                            <div class="skill-percent-circle" title="90% Mastery">90%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> LangChain</span>
+                            <div class="skill-percent-circle" title="87% Mastery">87%</div>
+                        </li>
                     </ul>
                     <div class="mt-4 text-blue-400 text-xs terminal">[ACTIVE: 5]</div>
                 </div>
                 
-                <!-- NETWORK OPS -->
+                <!-- BACKEND DEVELOPMENT -->
                 <div class="bg-black/50 border border-blue-800 rounded-lg p-6 hover:border-blue-600 
                           transition-all duration-300 hover:scale-105 group">
                     <div class="flex items-center mb-4">
@@ -464,11 +571,30 @@ passion</p>
                         <h3 class="text-xl font-bold font-orbitron">Backend Development</h3>
                     </div>
                     <ul class="space-y-2 text-blue-300 font-tech text-sm">
-                        <li>> django</li>
-                        <li>> django-RestFramework</li>
-                        <li>> api</li>
-                        <li>> Firestone</li>
-                        <li>> SQL</li>
+                        <li class="flex justify-between items-center">
+                            <span>> Django</span>
+                            <div class="skill-percent-circle" title="92% Mastery">92%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Django REST</span>
+                            <div class="skill-percent-circle" title="90% Mastery">90%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> API Development</span>
+                            <div class="skill-percent-circle" title="93% Mastery">93%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> Firestore</span>
+                            <div class="skill-percent-circle" title="88% Mastery">88%</div>
+                        </li>
+                        
+                        <li class="flex justify-between items-center">
+                            <span>> SQL</span>
+                            <div class="skill-percent-circle" title="85% Mastery">85%</div>
+                        </li>
                     </ul>
                     <div class="mt-4 text-blue-400 text-xs terminal">[ACTIVE_BACKEND: 5]</div>
                 </div>
@@ -481,8 +607,8 @@ passion</p>
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-12">
                 <div class="h-px flex-grow bg-gradient-to-r from-transparent via-blue-600 to-transparent"></div>
-                <h2 class="text-4xl md:text-5xl font-bold mx-8 font-orbitron text-glitch" data-text="HISTORY_MY">
-                    HISTORY_MY
+                <h2 class="text-4xl md:text-5xl font-bold mx-8 font-orbitron text-glitch" data-text="!PROJECTS">
+                    !PROJECTS
                 </h2>
                 <div class="h-px flex-grow bg-gradient-to-r from-transparent via-blue-600 to-transparent"></div>
             </div>
@@ -499,10 +625,18 @@ passion</p>
                         </div>
                         <h3 class="text-xl font-bold mb-3 font-orbitron">amharicNLP</h3>
                         <p class="text-blue-300 text-sm mb-4">Amharic NLP Toolkit is a lightweight python package, and easy-to-use Natural Language Processing (NLP) toolkit designed specifically for the Amharic language.</p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">pip</span>
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">install</span>
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">amharicNLP</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-400 text-xs font-tech">[PYPI Package]</span>
+                            <a href="https://pypi.org/project/amharicNLP/" target="_blank" 
+                               class="px-4 py-2 bg-blue-600/20 border border-blue-600 text-blue-400 text-xs font-tech
+                                      hover:bg-blue-600 hover:text-black transition-all duration-300">
+                                VIEW_REPO
+                            </a>
                         </div>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600
@@ -519,10 +653,18 @@ passion</p>
                         </div>
                         <h3 class="text-xl font-bold mb-3 font-orbitron">OBJECT-DETECTION</h3>
                         <p class="text-blue-300 text-sm mb-4">Real-time Road object detection and tracking system using YOLOv11</p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">CV</span>
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">python</span>
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">pytorch</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-400 text-xs font-tech">[Kaggle Repo]</span>
+                            <a href="https://www.kaggle.com/code/yonasabebe12/weighted-boxes-fusion" target="_blank" 
+                               class="px-4 py-2 bg-blue-600/20 border border-blue-600 text-blue-400 text-xs font-tech
+                                      hover:bg-blue-600 hover:text-black transition-all duration-300">
+                                VIEW_CODE
+                            </a>
                         </div>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 
@@ -539,10 +681,18 @@ passion</p>
                         </div>
                         <h3 class="text-xl font-bold mb-3 font-orbitron">MOBILE_APP_DEVELOPMENT</h3>
                         <p class="text-blue-300 text-sm mb-4">Custom mobile applications with advanced security and privacy features.</p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">React Native</span>
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">Firebase</span>
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">expo</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-400 text-xs font-tech">[Demo Apps]</span>
+                            <a href="https://github.com/yonasab12" target="_blank" 
+                               class="px-4 py-2 bg-blue-600/20 border border-blue-600 text-blue-400 text-xs font-tech
+                                      hover:bg-blue-600 hover:text-black transition-all duration-300">
+                                VIEW_APPS
+                            </a>
                         </div>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 
@@ -559,10 +709,18 @@ passion</p>
                         </div>
                         <h3 class="text-xl font-bold mb-3 font-orbitron">WEB-APP</h3>
                         <p class="text-blue-300 text-sm mb-4">Sentiment analysis platform deep learning based.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">django</span>
-                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">React</span>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">Flask</span>
+                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">html-css-js</span>
                             <span class="px-3 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">TensorFlow</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-400 text-xs font-tech">[Github Repo]</span>
+                            <a href="yonasab12/fulllstack_web_app_flask " target="_blank" 
+                               class="px-4 py-2 bg-blue-600/20 border border-blue-600 text-blue-400 text-xs font-tech
+                                      hover:bg-blue-600 hover:text-black transition-all duration-300">
+                                VIEW_PROJECT
+                            </a>
                         </div>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 
@@ -575,39 +733,250 @@ passion</p>
     <!-- CONTACT SECTION -->
     <section id="contact" class="py-20 relative">
         <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <div class="flex items-center mb-12">
                     <div class="h-px flex-grow bg-gradient-to-r from-transparent via-blue-600 to-transparent"></div>
-                    <h2 class="text-4xl md:text-5xl font-bold mx-8 font-orbitron text-glitch" data-text="CONNECT_">
-                        CONNECT_
+                    <h2 class="text-4xl md:text-5xl font-bold mx-8 font-orbitron text-glitch" data-text="ABOUT_ME">
+                        ABOUT_ME
                     </h2>
                     <div class="h-px flex-grow bg-gradient-to-r from-transparent via-blue-600 to-transparent"></div>
                 </div>
                 
-                <!-- ENCRYPTED CONTACT FORM -->
-                <div class="terminal-scroll p-8">
-                    <div class="font-tech text-sm mb-6">
-                        <p class="text-green-500">Establish_AI_AGENT</p>
-                        <p class="text-blue-300 terminal">[EXPO] [ML] [AI]</p>
+               
+                <!-- ABOUT ME DESCRIPTION -->
+<div class="terminal-scroll p-8 mb-12 relative overflow-hidden">
+    <!-- ANIMATED BACKGROUND PATTERN -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: 
+            linear-gradient(90deg, transparent 50%, rgba(37, 99, 235, 0.1) 50%);
+            background-size: 20px 20px;"></div>
+    </div>
+    
+    <div class="relative z-10">
+        <!-- HEADER WITH GLOW EFFECT -->
+        <div class="flex items-center mb-6 pb-4 border-b border-blue-800/50">
+            <div class="w-3 h-3 bg-blue-600 rounded-full mr-3 animate-pulse"></div>
+            <div class="flex-grow">
+                <h3 class="text-2xl md:text-3xl font-orbitron font-bold text-blue-400 mb-1 text-blue-glow">
+                    YONAS_ABEBE
+                </h3>
+                <div class="flex flex-wrap gap-3 mt-2">
+                    <span class="px-3 py-1 bg-blue-600/20 border border-blue-600 text-blue-400 text-xs font-orbitron rounded-full 
+                                hover:bg-blue-600 hover:text-black transition-all duration-300">
+                        AI_ENGINEER
+                    </span>
+                    <span class="px-3 py-1 bg-blue-600/20 border border-blue-600 text-blue-400 text-xs font-orbitron rounded-full 
+                                hover:bg-blue-600 hover:text-black transition-all duration-300">
+                        MOBILE_DEV
+                    </span>
+                  
+                </div>
+            </div>
+            <div class="text-blue-400 text-sm font-tech terminal">
+                [ACTIVE]
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL PROFILE SECTION -->
+        <div class="space-y-6">
+            <!-- FIRST PARAGRAPH WITH ICON -->
+            <div class="group relative">
+                <div class="flex items-start">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:animate-pulse"></div>
+                    <div>
+                        <p class="text-blue-300 font-tech leading-relaxed tracking-wide">
+                            <span class="text-green-400 font-bold mr-2">></span>
+                            AI Engineer & Mobile Developer with expertise in Machine Learning, NLP, and Computer Vision. 
+                            Specializes in building scalable mobile applications using modern technologies.
+                        </p>
+                    </div>
+                </div>
+                <!-- HOVER EFFECT LINE -->
+                <div class="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-green-500 to-blue-600 
+                          group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <!-- SECOND PARAGRAPH WITH ICON -->
+            <div class="group relative">
+                <div class="flex items-start">
+                    <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:animate-pulse"></div>
+                    <div>
+                        <p class="text-blue-300 font-tech leading-relaxed tracking-wide">
+                            <span class="text-cyan-400 font-bold mr-2">></span>
+                            Proven track record in developing end-to-end AI systems - from data processing and model training 
+                            to deployment and maintenance.
+                        </p>
+                    </div>
+                </div>
+                <!-- HOVER EFFECT LINE -->
+                <div class="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-cyan-500 to-blue-600 
+                          group-hover:w-full transition-all duration-500 delay-100"></div>
+            </div>
+
+            <!-- THIRD PARAGRAPH WITH ICON -->
+            <div class="group relative">
+                <div class="flex items-start">
+                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:animate-pulse"></div>
+                    <div>
+                        <p class="text-blue-300 font-tech leading-relaxed tracking-wide">
+                            <span class="text-purple-400 font-bold mr-2">></span>
+                            Active open-source contributor and mentor to aspiring developers in tech community.
+                        </p>
+                    </div>
+                </div>
+                <!-- HOVER EFFECT LINE -->
+                <div class="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-purple-500 to-blue-600 
+                          group-hover:w-full transition-all duration-500 delay-200"></div>
+            </div>
+        </div>
+
+        <!-- STATUS BADGES -->
+        <div class="mt-8 pt-6 border-t border-blue-800/50">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                
+                <div class="text-center group">
+                    <div class="text-blue-400 font-tech text-sm mb-2">Projects</div>
+                    <div class="text-blue-600 font-orbitron text-lg terminal group-hover:text-cyan-400 transition-all">10+</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-blue-400 font-tech text-sm mb-2">Status</div>
+                    <div class="text-blue-600 font-orbitron text-lg terminal group-hover:text-purple-400 transition-all">Active</div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- CORNER ACCENTS -->
+    <div class="absolute top-0 right-0 w-8 h-8 border-t border-r border-blue-600"></div>
+    <div class="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-blue-600"></div>
+</div>
+                <!-- CERTIFICATIONS SECTION -->
+                <h3 class="text-2xl md:text-3xl font-bold mb-8 font-orbitron text-center text-glitch" data-text="CERTIFICATIONS">
+                    CERTIFICATIONS
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- Certificate 1 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">2024</div>
+                        <img src="/images/udacity.png" 
+                             alt="Machine Learning Certification" class="cert-image">
+                        <div class="flex items-center mb-3">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></div>
+                            <h4 class="text-lg font-bold font-orbitron">Data Analaysis Fundamentals</h4>
+                        </div>
+                        <p class="text-blue-300 text-sm mb-3">Udacity</p>
+                        
                     </div>
                     
-                    <button onclick="sendEncryptedMessage()" class="w-full bg-black border-2 border-blue-600 text-blue-600 py-4 
-                             font-bold font-orbitron hover:bg-blue-600 hover:text-black 
-                             transition-all duration-300 blue-glow hover:scale-105 active:scale-95
-                             flex items-center justify-center space-x-3">
-                        <div class="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></div>
-                        <span>LEARN_TIME_LINE</span>
-                        <div class="w-3 h-3 bg-blue-600 rounded-full animate-pulse" style="animation-delay: 0.5s"></div>
-                    </button>
+                    <!-- Certificate 2 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">2025</div>
+                        <img src="/images/infnova.jpg" 
+                             alt="Deep Learning Certification" class="cert-image">
+                        <div class="flex items-center mb-3">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></div>
+                            <h4 class="text-lg font-bold font-orbitron">python assistant teacher</h4>
+                        </div>
+                        <p class="text-blue-300 text-sm mb-3">InFARANOVA-TECHNOLOGIES</p>
+                        
+                    </div>
+                    
+                    <!-- Certificate 3 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">2024</div>
+                        <img src="/images/colombia.png" 
+                             alt="React Native Certification" class="cert-image">
+                        <div class="flex items-center mb-3">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></div>
+                            <h4 class="text-lg font-bold font-orbitron">Deep Learning AI |Machine Learning</h4>
+                        </div>
+                        <p class="text-blue-300 text-sm mb-3">Colombia</p>
+                        
+                    </div>
+                    
+                    <!-- Certificate 4 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">2023</div>
+                        <img src="/images/coursera.png" 
+                             alt="Python Data Science Certification" class="cert-image">
+                        <div class="flex items-center mb-3">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></div>
+                            <h4 class="text-lg font-bold font-orbitron">Python For everyone</h4>
+                        </div>
+                        <p class="text-blue-300 text-sm mb-3"> coursera </p>
+                       
+                    </div>
+                    
+                   
+                
+                <!-- CONTACT FORM -->
+                <div class="terminal-scroll p-8" id="contactForm">
+                    <div class="font-tech text-sm mb-6">
+                        <p class="text-green-500">CONTACT FORM</p>
+                       
+                    </div>
+                    
+                    <!-- Email Form -->
+                    <form id="emailForm" class="mb-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="text-blue-400 font-tech text-sm mb-2 block">YOUR_NAME</label>
+                                <input type="text" id="name" name="name"
+                                       class="w-full bg-black border border-blue-800 text-blue-300 p-3 font-tech
+                                              focus:border-blue-600 focus:outline-none"
+                                       placeholder="> Enter your name" required>
+                            </div>
+                            <div>
+                                <label class="text-blue-400 font-tech text-sm mb-2 block">YOUR_EMAIL</label>
+                                <input type="email" id="email" name="email"
+                                       class="w-full bg-black border border-blue-800 text-blue-300 p-3 font-tech
+                                              focus:border-blue-600 focus:outline-none"
+                                       placeholder="> Enter your email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="text-blue-400 font-tech text-sm mb-2 block">MESSAGE</label>
+                            <textarea id="message" name="message"
+                                class="w-full bg-black border border-blue-800 text-blue-300 p-3 font-tech h-32
+                                       focus:border-blue-600 focus:outline-none"
+                                placeholder="> Type your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-black border-2 border-blue-600 text-blue-600 py-4 
+                                 font-bold font-orbitron hover:bg-blue-600 hover:text-black 
+                                 transition-all duration-300 blue-glow hover:scale-105 active:scale-95
+                                 flex items-center justify-center space-x-3">
+                            <div class="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></div>
+                            <span>SEND_MESSAGE</span>
+                            <div class="w-3 h-3 bg-blue-600 rounded-full animate-pulse" style="animation-delay: 0.5s"></div>
+                        </button>
+                    </form>
+                    
+                    <!-- Buy Me Coffee -->
+                    <div class="border-t border-blue-800/50 pt-8">
+                        <div class="text-center">
+                            <p class="text-blue-400 font-tech mb-4">[SUPPORT_MY_WORK]</p>
+                            <a href="https://buymeacoffee.com/yonasabeb" target="_blank" 
+                               class="inline-flex items-center justify-center px-8 py-3 bg-yellow-600/20 border border-yellow-600 
+                                      text-yellow-400 font-bold font-orbitron hover:bg-yellow-600 hover:text-black 
+                                      transition-all duration-300 hover:scale-105">
+                                <span class="mr-2">☕</span>
+                                BUY_ME_COFFEE
+                            </a>
+                        </div>
+                    </div>
                     
                     <div class="mt-8 pt-8 border-t border-blue-800/50">
                         <div class="grid grid-cols-2 gap-4 text-center">
                             <div>
-                                <div class="text-blue-400 font-tech mb-2">progress</div>
-                                <div class="text-blue-600 font-orbitron terminal">Keept</div>
+                                <div class="text-blue-400 font-tech mb-2">Response_Time</div>
+                                <div class="text-blue-600 font-orbitron terminal">24-48 HRS</div>
                             </div>
                             <div>
-                                <div class="text-blue-400 font-tech mb-2">LEARN</div>
+                                <div class="text-blue-400 font-tech mb-2">Availability</div>
                                 <div class="text-blue-600 font-orbitron terminal">ACTIVE</div>
                             </div>
                         </div>
@@ -659,9 +1028,89 @@ passion</p>
             // Type "AI-ENGINEER" text on load
             typeAIEngineer();
             
-            // Add random terminal noise every 2 seconds
-            setInterval(addTerminalNoise, 2000);
+            // Setup email form submission
+            setupEmailForm();
         });
+        
+        // === SETUP EMAIL FORM ===
+        function setupEmailForm() {
+            const form = document.getElementById('emailForm');
+            const contactForm = document.getElementById('contactForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Show sending message
+                const sendingMsg = document.createElement('p');
+                sendingMsg.className = 'text-green-500 font-tech text-sm mt-4';
+                sendingMsg.textContent = 'SENDING_MESSAGE...';
+                contactForm.appendChild(sendingMsg);
+                
+                // Using Formspree for email submission with your URL
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('message', message);
+                
+                // Your Formspree endpoint
+                fetch('https://formspree.io/f/mlgwebbz', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Remove sending message
+                    sendingMsg.remove();
+                    
+                    const successMsg = document.createElement('p');
+                    successMsg.className = 'text-blue-300 font-tech text-sm mt-4';
+                    
+                    if (data.ok) {
+                        successMsg.textContent = 'MESSAGE_SENT_SUCCESSFULLY';
+                        successMsg.className = 'text-green-500 font-tech text-sm mt-4';
+                        
+                        // Clear form
+                        form.reset();
+                    } else {
+                        successMsg.textContent = 'ERROR_SENDING_MESSAGE';
+                        successMsg.className = 'text-red-500 font-tech text-sm mt-4';
+                    }
+                    
+                    contactForm.appendChild(successMsg);
+                    
+                    // Remove success message after 5 seconds
+                    setTimeout(() => {
+                        if (successMsg.parentNode === contactForm) {
+                            contactForm.removeChild(successMsg);
+                        }
+                    }, 5000);
+                })
+                .catch(error => {
+                    sendingMsg.remove();
+                    const errorMsg = document.createElement('p');
+                    errorMsg.className = 'text-red-500 font-tech text-sm mt-4';
+                    errorMsg.textContent = 'NETWORK_ERROR_PLEASE_TRY_AGAIN';
+                    contactForm.appendChild(errorMsg);
+                    
+                    // Remove error message after 5 seconds
+                    setTimeout(() => {
+                        if (errorMsg.parentNode === contactForm) {
+                            contactForm.removeChild(errorMsg);
+                        }
+                    }, 5000);
+                });
+                
+                // Scroll to show message
+                contactForm.scrollTop = contactForm.scrollHeight;
+            });
+        }
         
         // === BINARY RAIN EFFECT ===
         function createBinaryRain() {
@@ -759,22 +1208,6 @@ passion</p>
             setTimeout(typeWriter, 1000);
         }
         
-        // === TERMINAL NOISE ===
-        function addTerminalNoise() {
-            const terminals = document.querySelectorAll('.terminal-scroll');
-            if(Math.random() > 0.7 && terminals.length > 0) {
-                const randomTerm = terminals[Math.floor(Math.random() * terminals.length)];
-                const noise = document.createElement('div');
-                noise.className = 'text-blue-400 font-tech text-xs mt-2';
-                noise.textContent = `[${Date.now()}] LOADING: ${Math.random().toString(36).substr(2, 8)}`;
-                randomTerm.appendChild(noise);
-                
-                if(randomTerm.children.length > 10) {
-                    randomTerm.removeChild(randomTerm.children[0]);
-                }
-            }
-        }
-        
         // === BUTTON ACTIONS ===
         function initiateBreach() {
             const terminal = document.querySelector('.terminal-scroll');
@@ -825,37 +1258,6 @@ passion</p>
                         terminal.appendChild(exploitItem);
                     }, index * 200);
                 });
-            }, 500);
-            
-            terminal.scrollTop = terminal.scrollHeight;
-        }
-        
-        function sendEncryptedMessage() {
-            const terminal = document.querySelector('.terminal-scroll');
-            const sendingMsg = document.createElement('p');
-            sendingMsg.className = 'text-green-500 font-tech text-sm mt-4';
-            sendingMsg.textContent = 'BUILD AI AGENT...';
-            terminal.appendChild(sendingMsg);
-            
-            setTimeout(() => {
-                const encryptMsg = document.createElement('p');
-                encryptMsg.className = 'text-cyan-300 font-tech text-sm';
-                encryptMsg.textContent = '[CODE] [MODEL]';
-                terminal.appendChild(encryptMsg);
-                
-                setTimeout(() => {
-                    const successMsg = document.createElement('p');
-                    successMsg.className = 'text-blue-300 font-tech text-sm';
-                    successMsg.textContent = 'PROCESS_COMPLETE ';
-                    terminal.appendChild(successMsg);
-                    
-                    // Add visual feedback
-                    document.querySelector('button').classList.add('bg-blue-600', 'text-black');
-                    setTimeout(() => {
-                        document.querySelector('button').classList.remove('bg-blue-600', 'text-black');
-                    }, 1000);
-                    
-                }, 1000);
             }, 500);
             
             terminal.scrollTop = terminal.scrollHeight;
